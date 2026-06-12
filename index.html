@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本道路名マップ</title>
+<meta name="description" content="全国の道路を地図に描いて見える化。道路をタップすれば、名前・路線番号・通過する市区町村・行き先まで一目でわかる道路図鑑アプリ。">
+<style>
+  :root{ --green:#2E7D60; --ink:#1c2430; --sub:#5b6675; --bg:#f6f8f9; --card:#fff; --line:#e6eaed; }
+  *{box-sizing:border-box}
+  body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.75; -webkit-font-smoothing:antialiased; }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  .hero{text-align:center;padding:64px 20px 44px}
+  .logo{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,.12);margin:0 auto 22px;display:block}
+  h1{font-size:30px;margin:0 0 8px;letter-spacing:.02em}
+  .tag{font-size:17px;color:var(--sub);margin:0 auto 28px;max-width:560px}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#000;color:#fff;text-decoration:none;
+    padding:13px 24px;border-radius:13px;font-size:16px;font-weight:600;transition:transform .15s}
+  .badge:hover{transform:translateY(-2px)}
+  section{padding:8px 0 40px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}.hero{padding-top:44px}h1{font-size:25px}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;color:var(--sub);font-size:14.5px}
+  .lead{text-align:center;font-size:15px;color:var(--sub);margin:0 0 24px}
+  h2{text-align:center;font-size:21px;margin:8px 0 6px}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;color:var(--sub);font-size:14px}
+  .note a{color:var(--green)}
+  footer{text-align:center;color:var(--sub);font-size:13px;padding:34px 20px 56px}
+  footer a{color:var(--green);text-decoration:none;margin:0 10px}
+  .accent{height:4px;background:linear-gradient(90deg,#e0463c,#e8a23c,#2da55f,#2f6bff,#9b4dff);border-radius:4px;margin:34px auto 0;max-width:120px}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <svg class="logo" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="日本道路名マップ">
+      <rect width="96" height="96" rx="22" fill="#ffffff"/>
+      <g stroke-linecap="round" fill="none" stroke-width="6">
+        <path d="M10 30 L86 22" stroke="#e0463c"/>
+        <path d="M14 64 L82 72" stroke="#2f6bff"/>
+        <path d="M24 12 L40 86" stroke="#2da55f"/>
+        <path d="M70 10 L58 86" stroke="#e8a23c"/>
+        <path d="M8 52 L88 46" stroke="#16a39a"/>
+      </g>
+    </svg>
+    <h1>日本道路名マップ</h1>
+    <p class="tag">地図に描く、道路の名前・行き先・つながり。<br>全国の道路を見える化する道路図鑑アプリ。</p>
+    <a class="badge" href="https://apps.apple.com/app/id6778651837">App Storeでダウンロード</a>
+    <div class="accent"></div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>できること</h2>
+      <p class="lead">気になる「道」を、もっと知りたくなる。</p>
+      <div class="grid">
+        <div class="card"><h3>色分けして地図に描画</h3><p>道路ごと・路線ごとに色を分けて表示。地図を見るだけで道路網の骨格がつかめます。「すべて／高速のみ／一般道のみ」の切り替えも。</p></div>
+        <div class="card"><h3>タップで道路の詳細</h3><p>道路名・ふりがな・路線番号(国道/都道府県道/高速)・通過する市区町村・制限速度・Wikipediaリンクまで一目で。</p></div>
+        <div class="card"><h3>探したい道路を検索</h3><p>道路名・ふりがな・路線番号・市区町村から検索。「国道1号」で路線をまとめて表示、「新宿区を通る道路」を一覧表示も。</p></div>
+        <div class="card"><h3>特定の道路だけを表示</h3><p>気になる道路だけを地図に浮かび上がらせる特定道路モード。1本表示・路線まとめ・接続道路の表示・コレクション保存。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>データについて</h2>
+      <div class="note">
+        道路データは <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> を加工して作成しています(© OpenStreetMap contributors / ODbL)。
+        当アプリ独自の加工処理に起因する誤りを含む場合があり、元データの収録状況により一部の道路や交差点が表示されない・実際と異なることがあります。
+        本アプリはカーナビゲーション用ではありません。運転中の操作はおやめください。
+        <br><br>
+        <strong style="color:var(--ink)">加工済みデータの公開</strong><br>
+        本アプリに同梱している加工済みデータベースは ODbL 1.0 のもとで公開しています:
+        <a href="https://github.com/yaapp1682-wq/roadviewer-data" target="_blank" rel="noopener">github.com/yaapp1682-wq/roadviewer-data</a>
+        (データ本体は同リポジトリの <a href="https://github.com/yaapp1682-wq/roadviewer-data/releases" target="_blank" rel="noopener">Releases</a> から入手できます)。
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a href="https://apps.apple.com/app/id6778651837">App Store</a>
+      <a href="https://github.com/yaapp1682-wq/roadviewer-data/blob/main/PRIVACY.md" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://github.com/yaapp1682-wq/roadviewer-data" target="_blank" rel="noopener">サポート</a>
+    </div>
+    <p>© 2026 Yasuaki Yamashita</p>
+  </footer>
+</body>
+</html>
