@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本道路名マップ / 東京近郊すみか</title>
+<meta name="description" content="日本道路名マップと東京近郊すみか。地図で楽しむ・地図で住む街をさがす、iOSアプリ。">
+<style>
+  :root{ --green:#2E7D60; --ink:#1c2430; --sub:#5b6675; --bg:#f6f8f9; --card:#fff; --line:#e6eaed; --orange:#FB8C00; }
+  *{box-sizing:border-box}
+  body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.75; -webkit-font-smoothing:antialiased; }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  .hero{text-align:center;padding:64px 20px 44px}
+  .hero.second{padding-top:48px;border-top:1px solid var(--line);margin-top:8px}
+  .logo{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,.12);margin:0 auto 22px;display:block}
+  h1{font-size:30px;margin:0 0 8px;letter-spacing:.02em}
+  .tag{font-size:17px;color:var(--sub);margin:0 auto 28px;max-width:560px}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#000;color:#fff;text-decoration:none;
+    padding:13px 24px;border-radius:13px;font-size:16px;font-weight:600;transition:transform .15s}
+  .badge:hover{transform:translateY(-2px)}
+  .badge.soon{background:#9aa3ad;cursor:default}
+  .badge.soon:hover{transform:none}
+  section{padding:8px 0 40px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}.hero{padding-top:44px}h1{font-size:25px}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;color:var(--sub);font-size:14.5px}
+  .lead{text-align:center;font-size:15px;color:var(--sub);margin:0 0 24px}
+  h2{text-align:center;font-size:21px;margin:8px 0 6px}
+  .note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;color:var(--sub);font-size:14px}
+  .note a{color:var(--green)}
+  footer{text-align:center;color:var(--sub);font-size:13px;padding:34px 20px 56px}
+  footer a{color:var(--green);text-decoration:none;margin:0 10px}
+  .accent{height:4px;background:linear-gradient(90deg,#e0463c,#e8a23c,#2da55f,#2f6bff,#9b4dff);border-radius:4px;margin:34px auto 0;max-width:120px}
+  .accent.warm{background:linear-gradient(90deg,#FFCC80,#FB8C00,#EF6C00)}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <img class="logo" src="icon-roadmap.png" alt="日本道路名マップ アイコン" width="96" height="96">
+    <h1>日本道路名マップ</h1>
+    <p class="tag">地図に描く、道路の名前・行き先・つながり。<br>全国の道路を見える化する道路図鑑アプリ。</p>
+    <a class="badge" href="https://apps.apple.com/app/id6778651837">App Storeでダウンロード</a>
+    <div class="accent"></div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>できること</h2>
+      <p class="lead">気になる「道」を、もっと知りたくなる。</p>
+      <div class="grid">
+        <div class="card"><h3>色分けして地図に描画</h3><p>道路ごと・路線ごとに色を分けて表示。地図を見るだけで道路網の骨格がつかめます。「すべて／高速のみ／一般道のみ」の切り替えも。</p></div>
+        <div class="card"><h3>タップで道路の詳細</h3><p>道路名・ふりがな・路線番号(国道/都道府県道/高速)・通過する市区町村・制限速度・Wikipediaリンクまで一目で。</p></div>
+        <div class="card"><h3>探したい道路を検索</h3><p>道路名・ふりがな・路線番号・市区町村から検索。「国道1号」で路線をまとめて表示、「新宿区を通る道路」を一覧表示も。</p></div>
+        <div class="card"><h3>特定の道路だけを表示</h3><p>気になる道路だけを地図に浮かび上がらせる特定道路モード。1本表示・路線まとめ・接続道路の表示・コレクション保存。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>データについて</h2>
+      <div class="note">
+        道路データは <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> を加工して作成しています(© OpenStreetMap contributors / ODbL)。
+        当アプリ独自の加工処理に起因する誤りを含む場合があり、元データの収録状況により一部の道路や交差点が表示されない・実際と異なることがあります。
+        本アプリはカーナビゲーション用ではありません。運転中の操作はおやめください。
+        <br><br>
+        <strong style="color:var(--ink)">加工済みデータの公開</strong><br>
+        本アプリに同梱している加工済みデータベースは ODbL 1.0 のもとで公開しています:
+        <a href="https://github.com/yaapp1682-wq/roadviewer-data" target="_blank" rel="noopener">github.com/yaapp1682-wq/roadviewer-data</a>
+        (データ本体は同リポジトリの <a href="https://github.com/yaapp1682-wq/roadviewer-data/releases" target="_blank" rel="noopener">Releases</a> から入手できます)。
+      </div>
+    </section>
+  </main>
+
+  <header class="hero second">
+    <img class="logo" src="icon-sumika.png" alt="東京近郊すみか アイコン" width="96" height="96">
+    <h1>東京近郊すみか</h1>
+    <p class="tag">条件で地図が色づく、住む街さがし。<br>思いがけない“住む街”に出会えるエリア発見アプリ。</p>
+    <!-- 公開後、href を本アプリの App Store URL (apps.apple.com/app/idXXXX) に差し替え、soon クラスを外す -->
+    <a class="badge soon" href="#">App Storeで近日公開</a>
+    <div class="accent warm"></div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>できること</h2>
+      <p class="lead">駅や知名度ではなく、大事にしたい条件から住むエリアを見つける。</p>
+      <div class="grid">
+        <div class="card"><h3>かんたん設定で色分け</h3><p>子育て・治安・公園・病院・駅近など、大事にしたいことを選ぶだけ。東京・神奈川・埼玉・千葉を町丁単位で評価し、地図がやさしく色づきます。</p></div>
+        <div class="card"><h3>予算で絞り込み</h3><p>賃貸／購入と間取り・予算を入れると、相場が予算を超えるエリアは自動でグレーに。</p></div>
+        <div class="card"><h3>通勤時間で絞り込み</h3><p>家族それぞれの行き先(駅)と許容時間を入れると、みんなが通えるエリアだけが残ります。</p></div>
+        <div class="card"><h3>町ごとの詳細とお気に入り比較</h3><p>家賃・購入相場の目安、駅・路線、治安、洪水・土砂の災害リスク、周辺施設をまとめて表示。気になる街は並べて比較。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>思いがけない出会いを</h2>
+      <div class="note">
+        条件から地図を塗ることで、名前も知らなかったけれど“自分にぴったり”の街が浮かび上がります。有名な街だけでなく、自分に合う穴場も。次に住む場所を、思いがけない出会いから見つけてみませんか。
+      </div>
+    </section>
+
+    <section>
+      <h2>データについて</h2>
+      <div class="note">
+        国勢調査・国土数値情報・不動産情報ライブラリ・各都道府県警察の犯罪オープンデータ・<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> などの公開データを加工して利用しています(鉄道・施設は © OpenStreetMap contributors / ODbL)。
+        表示される相場・通勤時間・治安・災害などはすべて参考値(概算)です。実際の状況は公式情報を必ずご確認ください。
+        <br><br>
+        <strong style="color:var(--ink)">加工済みデータの公開</strong><br>
+        OpenStreetMap由来の加工済みデータベースは ODbL 1.0 のもとで公開しています:
+        <a href="https://github.com/yaapp1682-wq/sumika-osm-data" target="_blank" rel="noopener">github.com/yaapp1682-wq/sumika-osm-data</a>
+        (データ本体は同リポジトリの <a href="https://github.com/yaapp1682-wq/sumika-osm-data/releases" target="_blank" rel="noopener">Releases</a> から入手できます)。
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong style="color:var(--ink);display:block;margin-bottom:6px">日本道路名マップ</strong>
+      <a href="https://apps.apple.com/app/id6778651837">App Store</a>
+      <a href="https://github.com/yaapp1682-wq/roadviewer-data/blob/main/PRIVACY.md" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://github.com/yaapp1682-wq/roadviewer-data/blob/main/SUPPORT.md" target="_blank" rel="noopener">サポート</a>
+    </div>
+    <div style="margin-top:16px">
+      <strong style="color:var(--ink);display:block;margin-bottom:6px">東京近郊すみか</strong>
+      <a href="https://github.com/yaapp1682-wq/sumika-osm-data/blob/main/PRIVACY.md" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://github.com/yaapp1682-wq/sumika-osm-data/blob/main/SUPPORT.md" target="_blank" rel="noopener">サポート</a>
+    </div>
+    <p style="margin-top:20px">© 2026 Yasuaki Yamashita</p>
+  </footer>
+</body>
+</html>
