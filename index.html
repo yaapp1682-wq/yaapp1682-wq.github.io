@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>日本道路名マップ / 東京近郊すみか</title>
-<meta name="description" content="日本道路名マップと東京近郊すみか。地図で楽しむ・地図で住む街をさがす、iOSアプリ。">
+<title>日本道路名マップ / my鉄道マップ / 東京近郊すみか</title>
+<meta name="description" content="日本道路名マップ・my鉄道マップ・東京近郊すみか・まほうのおえかき。地図で楽しむ・地図で住む街をさがす、iOSアプリ。">
 <style>
   :root{ --green:#2E7D60; --ink:#1c2430; --sub:#5b6675; --bg:#f6f8f9; --card:#fff; --line:#e6eaed; --orange:#FB8C00; }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
     color:var(--ink); background:var(--bg); line-height:1.75; -webkit-font-smoothing:antialiased; }
   .wrap{max-width:880px;margin:0 auto;padding:0 20px}
@@ -35,10 +36,32 @@
   footer a{color:var(--green);text-decoration:none;margin:0 10px}
   .accent{height:4px;background:linear-gradient(90deg,#e0463c,#e8a23c,#2da55f,#2f6bff,#9b4dff);border-radius:4px;margin:34px auto 0;max-width:120px}
   .accent.warm{background:linear-gradient(90deg,#FFCC80,#FB8C00,#EF6C00)}
+  .accent.rail{background:linear-gradient(90deg,#2f6bff,#d32f2f,#1e9e57)}
+  /* アプリ一覧ナビ: 広い画面=左固定 / 狭い画面=上部固定チップ */
+  nav.apps{position:fixed;left:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:50}
+  nav.apps a{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:8px 12px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);transition:border-color .15s}
+  nav.apps a:hover{border-color:var(--green)}
+  nav.apps img{width:22px;height:22px;border-radius:6px}
+  @media(max-width:1180px){
+    nav.apps{position:sticky;top:0;left:auto;transform:none;flex-direction:row;justify-content:center;
+      flex-wrap:wrap;gap:6px;padding:10px 8px;background:rgba(246,248,249,.92);
+      -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    nav.apps a{padding:6px 10px;font-size:12px}
+  }
+  #roadmap,#myrail,#sumika,#mahooekaki{scroll-margin-top:76px}
 </style>
 </head>
 <body>
-  <header class="hero">
+  <nav class="apps" aria-label="アプリ一覧">
+    <a href="#roadmap"><img src="icon-roadmap.png" alt="">日本道路名マップ</a>
+    <a href="#myrail"><img src="icon-myrail.png" alt="">my鉄道マップ</a>
+    <a href="#sumika"><img src="icon-sumika.png" alt="">東京近郊すみか</a>
+    <a href="#mahooekaki"><img src="icon-mahooekaki.png" alt="">まほうのおえかき</a>
+  </nav>
+
+  <header class="hero" id="roadmap">
     <img class="logo" src="icon-roadmap.png" alt="日本道路名マップ アイコン" width="96" height="96">
     <h1>日本道路名マップ</h1>
     <p class="tag">地図に描く、道路の名前・行き先・つながり。<br>全国の道路を見える化する道路図鑑アプリ。</p>
@@ -73,7 +96,44 @@
     </section>
   </main>
 
-  <header class="hero second">
+  <header class="hero second" id="myrail">
+    <img class="logo" src="icon-myrail.png" alt="my鉄道マップ アイコン" width="96" height="96">
+    <h1>my鉄道マップ</h1>
+    <p class="tag">全国の鉄道を、あそべる地図に。<br>電車を走らせて眺めて、自分だけの路線とダイヤも作れる鉄道地図アプリ。</p>
+    <!-- App Store 公開後に下の soon バッジを削除し、コメントを外して URL を入れてください
+    <a class="badge" href="https://apps.apple.com/app/idXXXXXXXXXX">App Storeでダウンロード</a>
+    -->
+    <span class="badge soon">App Storeで近日公開</span>
+    <div class="accent rail"></div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>できること</h2>
+      <p class="lead">「日本道路名マップ」の鉄道版、登場。</p>
+      <div class="grid">
+        <div class="card"><h3>全国の鉄道を路線色で描画</h3><p>約650路線・9,000駅を収録。新幹線・JR・私鉄・地下鉄・路面電車まで路線色つきで地図に描きます。種別フィルタで「新幹線だけ」表示も。</p></div>
+        <div class="card"><h3>電車を走らせて眺める</h3><p>電車モードにすると地図の上を電車が走ります。時計を進めても戻しても、300倍速の早回しも。※ダイヤはアプリが推定した架空のものです。</p></div>
+        <div class="card"><h3>タップで駅・路線の詳細</h3><p>駅の時刻表(架空)や停車駅一覧を表示。分岐や環状もすっきり描画。検索から「この路線だけ表示」もできます。</p></div>
+        <div class="card"><h3>自分だけの路線とダイヤ</h3><p>駅を置いて線でつないでマイ路線を作成。時刻表を入力して自分のダイヤで電車を走らせられます。実在路線への直通も。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>データについて</h2>
+      <div class="note">
+        鉄道データは <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> を加工して作成しています(© OpenStreetMap contributors / ODbL)。
+        アプリ内の時刻表・電車の動きはすべて架空のもので、実際の運行とは異なります。乗換案内・運行情報の用途には利用できません。
+        <br><br>
+        <strong style="color:var(--ink)">加工済みデータの公開</strong><br>
+        本アプリに同梱している加工済みデータベースは ODbL 1.0 のもとで公開しています:
+        <a href="https://github.com/yaapp1682-wq/railviewer-data" target="_blank" rel="noopener">github.com/yaapp1682-wq/railviewer-data</a>
+        (データ本体は同リポジトリの <a href="https://github.com/yaapp1682-wq/railviewer-data/releases" target="_blank" rel="noopener">Releases</a> から入手できます)。
+      </div>
+    </section>
+  </main>
+
+  <header class="hero second" id="sumika">
     <img class="logo" src="icon-sumika.png" alt="東京近郊すみか アイコン" width="96" height="96">
     <h1>東京近郊すみか</h1>
     <p class="tag">条件で地図が色づく、住む街さがし。<br>思いがけない“住む街”に出会えるエリア発見アプリ。</p>
@@ -115,7 +175,7 @@
 
     <div class="accent"></div>
 
-    <section style="text-align:center;padding-top:40px">
+    <section style="text-align:center;padding-top:40px" id="mahooekaki">
       <img class="logo" src="icon-mahooekaki.png" alt="まほうのおえかき アイコン">
       <h1>まほうのおえかき</h1>
       <p class="tag">画面をなぞると、音と光がはじける。<br>2歳ごろから楽しめる、お子さま向けおえかきアプリ。</p>
@@ -144,13 +204,18 @@
       </div>
     </section>
   </main>
-  
+
   <footer>
     <div>
       <strong style="color:var(--ink);display:block;margin-bottom:6px">日本道路名マップ</strong>
       <a href="https://apps.apple.com/app/id6778651837">App Store</a>
       <a href="https://github.com/yaapp1682-wq/roadviewer-data/blob/main/PRIVACY.md" target="_blank" rel="noopener">プライバシーポリシー</a>
       <a href="https://github.com/yaapp1682-wq/roadviewer-data/blob/main/SUPPORT.md" target="_blank" rel="noopener">サポート</a>
+    </div>
+    <div style="margin-top:16px">
+      <strong style="color:var(--ink);display:block;margin-bottom:6px">my鉄道マップ</strong>
+      <a href="https://github.com/yaapp1682-wq/railviewer-data/blob/main/PRIVACY.md" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://github.com/yaapp1682-wq/railviewer-data/blob/main/SUPPORT.md" target="_blank" rel="noopener">サポート</a>
     </div>
     <div style="margin-top:16px">
       <strong style="color:var(--ink);display:block;margin-bottom:6px">東京近郊すみか</strong>
